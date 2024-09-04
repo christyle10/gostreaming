@@ -1,0 +1,359 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #141414; /* Fondo oscuro similar a Netflix */
+    position: relative;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+/* Contenedor principal centrado */
+.container {
+    max-width: 1000px; /* Reduce el ancho máximo del contenido */
+    margin: ; /* Centra el contenedor horizontalmente */
+    padding: 0 20px; /* Espacio interno para evitar que el contenido toque los bordes */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total del contenedor */
+}
+
+/* Imagen de Fondo */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ajusta el ancho al 100% del viewport */
+    height: 100vh; /* Ajusta el alto al 100% del viewport */
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover; /* Ajusta el tamaño para cubrir todo el fondo */
+    z-index: -1; /* Mantén la imagen detrás del contenido */
+}
+
+/* Estilo del encabezado */
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 95%;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Añade más espacio alrededor del contenido */
+    z-index: 1000;
+}
+
+header .logo {
+    max-width: 265px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+header .whatsapp-button {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); /* Degradado de colores de Instagram */
+    background-size: 400% 400%; /* Ajusta el tamaño del degradado para un efecto animado */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px; /* Bordes redondeados del botón */
+    cursor: pointer;
+    transition: background 0.5s ease; /* Transición suave para cambios de fondo */
+    text-decoration: none; /* Elimina el subrayado del texto si es un enlace */
+    display: inline-block; /* Hace que el botón respete el tamaño del contenido */
+}
+
+
+/* Estilo del área central */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding-top: 70px; /* Espacio para el encabezado fijo */
+}
+
+.main-content {
+    max-width: 80%; /* Reduce el ancho máximo del contenido principal */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra negra difusa */
+}
+
+.main-content h1 {
+    font-size: 3em; /* Ajusta el tamaño del texto */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra negra difusa */
+}
+.main-content1 {
+    max-width: 70%; /* Reduce el ancho máximo del contenido principal */
+margin: 0 auto; /* Centra horizontalmente */
+}
+
+ .text-large {
+            font-size: 4rem; /* Tamaño del texto */
+            margin: 0;       /* Elimina el margen exterior */
+            padding: 0;      /* Elimina el relleno interior */
+            line-height: 0.7; /* Ajusta el interlineado para que el texto esté más pegado */
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); /* Sombra negra difusa */
+        }
+
+.start-button {
+    background-color: #e50914; /* Color rojo de Netflix */
+    color: #fff;
+    padding: 5px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex; /* Usa flexbox para alinear los elementos dentro del botón */
+    align-items: center; /* Alinea verticalmente el icono y el texto */
+    gap: 0px; /* Espacio entre el icono y el texto */
+}
+
+.start-button .whatsapp-icon {
+    width: 40px; /* Ajusta el tamaño del icono según sea necesario */
+    height: auto;
+}
+
+/* Estilo del casco elíptico */
+.header-ellipse {
+    position: absolute;
+    top: -150px; /* Posiciona el casco en la parte inferior del viewport menos la altura del casco */
+    left: 0;
+    width: 100vw; /* Ancho completo de la ventana del navegador */
+    height: 90px; /* Altura del casco elíptico */
+    background: #000; /* Color negro, igual que el fondo de la página */
+    border-radius: 80% 80% 0 0; /* Crea la forma elíptica */
+    z-index: 10; /* Asegura que el casco esté sobre el fondo negro */
+    pointer-events: none; /* Asegura que el casco no interfiera con el clic en otros elementos */
+}
+
+
+/* Estilo de la sección de tendencias */
+     .trending {
+            margin-top: 150px; /* Ajusta el margen superior para hacer espacio para el casco */
+            padding: 38px;
+            background-color: #000; /* Fondo negro para la sección de tendencias */
+            position: relative;
+        }
+
+.trending::before {
+    content: '';
+    position: absolute;
+    top: -100px; /* Ajusta para mover el efecto hacia arriba */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Ajusta la altura del efecto elíptico */
+    background: #000; /* Fondo negro */
+    border-radius: 50% 50% 0 0; /* Efecto elíptico hacia arriba */
+    z-index: -1; /* Asegura que el elíptico esté detrás del contenido */
+}
+
+.trending h2 {
+    margin-bottom: 20px;
+    font-size: 2em; /* Ajusta el tamaño del texto */
+}
+
+/* Estilo para el elemento <h6> debajo de "Tendencias" */
+.trending-description {
+    font-size: 0.875rem; /* Tamaño de fuente para <h6> */
+    color: #555; /* Color del texto, ajusta según tu diseño */
+    text-align: auto; /* Alinear el texto al centro */
+    margin-top: 0; /* Elimina el margen superior para reducir espacio */
+    margin-bottom: 10px; /* Ajusta según sea necesario para un espaciado adecuado */
+    padding: 0; /* Elimina el padding si lo hay */
+}
+
+/* Estilo del contenedor de tendencias */
+.trending-container {
+    position: relative;
+    overflow: hidden; /* Evita que aparezcan barras de desplazamiento */
+}
+
+/* Estilo del slider de tendencias */
+.trending-slider {
+    display: flex;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    overflow-y: hidden; /* Oculta las barras de desplazamiento verticales */
+    scroll-behavior: smooth;
+    white-space: nowrap; /* Evita el ajuste de línea y mantiene el contenido en una sola línea */
+    padding-bottom: 10px; /* Espacio adicional para evitar que las imágenes se oculten debajo de la barra de desplazamiento */
+}
+
+/* Ocultar las barras de desplazamiento en el contenedor del slider */
+.trending-slider::-webkit-scrollbar {
+    display: none; /* Oculta las barras de desplazamiento en WebKit (Chrome, Safari) */
+}
+
+.trending-slider {
+    -ms-overflow-style: none;  /* Oculta las barras de desplazamiento en IE y Edge */
+    scrollbar-width: none;  /* Oculta las barras de desplazamiento en Firefox */
+}
+
+.trending-slider img {
+    width: 180px; /* Reduce el tamaño de las imágenes de tendencia */
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.trending-slider img:hover {
+    transform: scale(1.3); /* Escala de la imagen al pasar el ratón */
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+    .trending-slider img {
+        width: 100px; /* Tamaño más pequeño de las imágenes en pantallas móviles */
+        margin-right: 10px; /* Ajusta el margen derecho para que se vea bien en pantallas más pequeñas */
+    }
+}
+
+/* Estilo de las flechas de navegación */
+.arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 20px; /* Tamaño de las flechas */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100; /* Asegura que las flechas estén por encima del slider */
+    border-radius: 100%; /* Opcional: añade bordes redondeados */
+    width: 50px; /* Ancho de las flechas */
+    height: 50px; /* Altura de las flechas */
+    display: none; /* Oculta inicialmente las flechas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-arrow {
+    left: 0; /* Posiciona la flecha de la izquierda en el borde izquierdo del contenedor */
+}
+
+.right-arrow {
+    right: 0; /* Posiciona la flecha de la derecha en el borde derecho del contenedor */
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo de la sección Motivos para Unirte */
+.motivos {
+    padding: 38px;
+    background-color: #000; /* Fondo negro para la sección */
+    position: relative;
+    overflow: hidden; /* Oculta el desbordamiento del contenedor */
+}
+
+.motivos h2 {
+    margin-bottom: 20px;
+    font-size: 2em; /* Ajusta el tamaño del texto */
+}
+
+/* Estilo del contenedor de motivos */
+.motivos-container {
+    position: relative;
+    overflow: hidden; /* Evita que aparezcan barras de desplazamiento */
+    display: flex; /* Usa flexbox para centrar el contenido horizontalmente en pantallas grandes */
+    justify-content: center; /* Centra el contenido horizontalmente en pantallas grandes */
+    flex-wrap: nowrap; /* No envuelve las imágenes en pantallas grandes */
+}
+
+/* Para pantallas grandes (escritorios) */
+@media (min-width: 768px) {
+    .motivos-slider {
+        display: flex; /* Muestra las imágenes en fila horizontalmente en pantallas grandes */
+        overflow-x: auto; /* Permite el desplazamiento horizontal */
+        overflow-y: hidden; /* Oculta las barras de desplazamiento verticales */
+        scroll-behavior: smooth;
+        white-space: nowrap; /* Mantiene las imágenes en una sola línea horizontal */
+        padding-bottom: 10px; /* Espacio adicional para evitar que las imágenes se oculten debajo de la barra de desplazamiento */
+    }
+
+    .motivos-slider img {
+        width: 410px; /* Reduce el tamaño de las imágenes de motivos */
+        margin-right: 10px;
+        transition: transform 0.3s ease;
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+
+    .motivos-container {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna en pantallas pequeñas */
+    }
+
+    .motivos-slider {
+        display: flex; /* Muestra las imágenes en una columna vertical en pantallas pequeñas */
+        flex-direction: column; /* Las imágenes se muestran una debajo de la otra */
+        overflow-y: auto; /* Permite el desplazamiento vertical */
+        overflow-x: hidden; /* Oculta las barras de desplazamiento horizontales */
+    }
+
+    .motivos-slider img {
+        width: 100%; /* Ajusta el tamaño de las imágenes para que ocupen todo el ancho del contenedor */
+        margin-bottom: 10px; /* Espacio entre las imágenes */
+    }
+}
+
+/* Estilo de las flechas de navegación para móviles */
+.arrow-motivos {
+    display: none; /* Oculta las flechas en pantallas móviles */
+}
+
+.left-arrow-motivos {
+    left: 0; /* Posiciona la flecha de la izquierda en el borde izquierdo del contenedor */
+    display: none; /* Inicialmente oculta la flecha de la izquierda */
+}
+
+.right-arrow-motivos {
+    right: 0; /* Posiciona la flecha de la derecha en el borde derecho del contenedor */
+}
+.arrow-motivos:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo del botón "Chatea con nosotros" */
+.chat-button {
+    display: none; /* Oculta el botón por defecto */
+    position: fixed; /* Fija el botón en la parte inferior */
+    bottom: 20px; /* Espacio desde el fondo de la página */
+    right: 20px; /* Espacio desde el borde derecho de la página */
+    background-color: #25D366; /* Color de fondo (verde WhatsApp) */
+    color: #fff;
+    padding: 10px 190px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para el botón */
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animación suave */
+}
+
+/* Clase para mostrar el botón con animación */
+.show-chat-button {
+    display: block; /* Muestra el botón */
+    transform: translateY(0); /* Muestra el botón en la posición final */
+    opacity: 1; /* Opacidad total */
+}
+
+/* Clase para ocultar el botón con animación */
+.hide-chat-button {
+    transform: translateY(100px); /* Mueve el botón fuera de la vista */
+    opacity: 0; /* Oculta el botón */
+}
+
+/* Estilo del pie de página */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
