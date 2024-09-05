@@ -124,7 +124,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.7rem; /* Tamaño del texto principal */
+    font-size: 1.5rem; /* Tamaño del texto principal */
     font-family: 'Arial', sans-serif; /* Fuente del texto */
     font-weight: 700; /* Grosor del texto */
     color: #f0f0f0; /* Color claro para el texto */
@@ -135,6 +135,20 @@ h2 {
     text-transform: none; /* Convierte el texto a mayúsculas */
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
 }
+
+h3 {
+    font-size: 1.8rem; /* Tamaño del texto principal */
+    font-family: 'Arial', sans-serif; /* Fuente del texto */
+    font-weight: 700; /* Grosor del texto */
+    color: #f0f0f0; /* Color claro para el texto */
+    text-align: auto; /* Centra el texto */
+    margin: 10px 0; /* Márgenes arriba y abajo del texto */
+    padding: 0; /* Sin relleno adicional */
+    line-height: 0.5; /* Espaciado entre líneas */
+    text-transform: none; /* Convierte el texto a mayúsculas */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+}
+
 
 
 h4 {
