@@ -7,26 +7,37 @@ body {
     background: #141414; /* Fondo oscuro similar a Netflix */
     position: relative;
     overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
 }
 
 /* Contenedor principal centrado */
 .container {
     max-width: 1000px; /* Reduce el ancho máximo del contenido */
-    margin: ; /* Centra el contenedor horizontalmente */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 0 20px; /* Espacio interno para evitar que el contenido toque los bordes */
     box-sizing: border-box; /* Incluye el padding en el tamaño total del contenedor */
 }
 
 /* Imagen de Fondo */
 .background-image {
-    position: fixed;
+    position: absolute; /* Asegura que se ajuste al contenedor */
     top: 0;
     left: 0;
-    width: 100vw; /* Ajusta el ancho al 100% del viewport */
-    height: 100vh; /* Ajusta el alto al 100% del viewport */
+    width: 100vw;
+    height: auto; /* Ajusta la altura automáticamente */
+    min-height: 120vh; /* Asegura que cubra al menos la altura del viewport */
     background: url('background.jpg') no-repeat center center;
-    background-size: cover; /* Ajusta el tamaño para cubrir todo el fondo */
+    background-size: cover;
     z-index: -1; /* Mantén la imagen detrás del contenido */
+ transform: translateY(0); /* Inicialmente sin desplazamiento */
+    transition: transform 0.3s ease; /* Transición suave para el movimiento */
+}
+
+/* Ajustar la altura del contenedor de la imagen de fondo */
+.main {
+    position: relative;
+    overflow: hidden; /* Evita el desbordamiento */
+    height: auto; /* Ajusta la altura de acuerdo con el contenido */
 }
 
 /* Estilo del encabezado */
@@ -45,7 +56,7 @@ header {
 }
 
 header .logo {
-    max-width: 265px; /* Ajusta el tamaño del logo */
+    max-width: 220px; /* Ajusta el tamaño del logo */
     height: auto;
 }
 
@@ -54,7 +65,7 @@ header .whatsapp-button {
     background-size: 400% 400%; /* Ajusta el tamaño del degradado para un efecto animado */
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 4px 10px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px; /* Bordes redondeados del botón */
@@ -68,18 +79,21 @@ header .whatsapp-button {
 /* Estilo del área central */
 main {
     display: flex;
+    flex-direction: column; /* Alinea el contenido verticalmente */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: calc(100vh - 70px); /* Ajusta la altura mínima para el área principal */
     text-align: center;
-    padding-top: 70px; /* Espacio para el encabezado fijo */
+    padding: 0 20px; /* Ajusta el padding según sea necesario */
+    position: relative; /* Asegura que el contenido esté en un contenedor relativo */
+    z-index: 1; /* Asegura que el contenido esté por encima del elipse */
 }
 
 .main-content {
-    max-width: 80%; /* Reduce el ancho máximo del contenido principal */
+    max-width: 80%; /* Limita el ancho del contenido para que no sea demasiado grande */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Sombra negra difusa */
+    position: relative; /* Asegura que el contenido esté en un contenedor relativo */
 }
-
 .main-content h1 {
     font-size: 3em; /* Ajusta el tamaño del texto */
     margin-bottom: 15px;
@@ -90,25 +104,78 @@ main {
 margin: 0 auto; /* Centra horizontalmente */
 }
 
- .text-large {
-            font-size: 4rem; /* Tamaño del texto */
-            margin: 0;       /* Elimina el margen exterior */
-            padding: 0;      /* Elimina el relleno interior */
-            line-height: 0.7; /* Ajusta el interlineado para que el texto esté más pegado */
-            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); /* Sombra negra difusa */
-        }
+.text-large {
+    font-size: 4rem; /* Tamaño del texto */
+    margin: 0; /* Elimina el margen exterior */
+    padding: 0; /* Elimina el relleno interior */
+    line-height: 1.2; /* Ajusta el interlineado para mejorar la legibilidad */
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); /* Sombra negra difusa */
+}
+
+h1 {
+    font-size: 8rem; /* Tamaño del texto (puedes usar px, em, rem, etc.) */
+    font-weight: bold; /* Grosor del texto */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0px; /* Espacio interno alrededor del texto */
+    line-height: 1.0; /* Altura de la línea (espaciado entre líneas) */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra del texto para mejorar la legibilidad */
+}
+
+h2 {
+    font-size: 1.7rem; /* Tamaño del texto principal */
+    font-family: 'Arial', sans-serif; /* Fuente del texto */
+    font-weight: 700; /* Grosor del texto */
+    color: #f0f0f0; /* Color claro para el texto */
+    text-align: auto; /* Centra el texto */
+    margin: 10px 0; /* Márgenes arriba y abajo del texto */
+    padding: 0; /* Sin relleno adicional */
+    line-height: 0.5; /* Espaciado entre líneas */
+    text-transform: none; /* Convierte el texto a mayúsculas */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+}
+
+
+h4 {
+    font-size: 1.1rem; /* Tamaño del texto principal */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    font-weight: 700; /* Grosor del texto */
+    color: #f0f0f0; /* Color claro para el texto */
+    text-align: auto; /* Centra el texto */
+    margin: 20px 0; /* Márgenes arriba y abajo del texto */
+    padding: 0; /* Sin relleno adicional */
+    line-height: 1.2; /* Espaciado entre líneas */
+    text-transform: none; /* Convierte el texto a mayúsculas */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+}
+
+
+
+
+.custom-text {
+    font-family: 'Roboto', sans-serif; /* Cambia a Calibri o fuente similar */
+    font-weight: 500; /* Ligera, similar a Calibri Light */
+    font-size: 16px; /* Ajusta el tamaño según tus necesidades */
+    color: #fff; /* Cambia el color del texto si es necesario */
+    line-height: 1.4; /* Ajusta la altura de línea para mejor legibilidad */
+    margin: 5px 0; /* Ajusta el margen para el espacio alrededor del texto */
+     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra negra más pronunciada */
+}
 
 .start-button {
     background-color: #e50914; /* Color rojo de Netflix */
     color: #fff;
-    padding: 5px 30px;
+    padding: 2px 20px; /* Ajusta el relleno para que el botón no sea tan grande */
     text-decoration: none;
     border-radius: 5px;
-    font-size: 1.5em;
+    font-size: 1.0em; /* Ajusta el tamaño del texto */
     font-weight: bold;
     display: flex; /* Usa flexbox para alinear los elementos dentro del botón */
+justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center; /* Alinea verticalmente el icono y el texto */
-    gap: 0px; /* Espacio entre el icono y el texto */
+    gap: 2px; /* Espacio entre el icono y el texto */
+    transition: background 0.3s ease; /* Transición suave para el fondo */
 }
 
 .start-button .whatsapp-icon {
@@ -198,7 +265,7 @@ margin: 0 auto; /* Centra horizontalmente */
 }
 
 .trending-slider img:hover {
-    transform: scale(1.3); /* Escala de la imagen al pasar el ratón */
+    transform: scale(1.2); /* Escala de la imagen al pasar el ratón */
 }
 
 /* Para pantallas pequeñas (móviles) */

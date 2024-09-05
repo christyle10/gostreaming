@@ -1,3 +1,4 @@
+
 document.addEventListener('touchstart', function (e) {
     if (e.target.tagName === 'IMG') {
         e.preventDefault(); // Bloquear el menú contextual en imágenes
