@@ -14,6 +14,7 @@ body {
 .container {
     max-width: 1000px; /* Reduce el ancho máximo del contenido */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: hidden;
     padding: 0 20px; /* Espacio interno para evitar que el contenido toque los bordes */
     box-sizing: border-box; /* Incluye el padding en el tamaño total del contenedor */
 }
@@ -178,7 +179,7 @@ h4 {
 }
 
 .start-button {
-    background-color: #e50914; /* Color rojo de Netflix */
+    background-color: #25D366; /* Color rojo de Netflix */
     color: #fff;
     padding: 2px 20px; /* Ajusta el relleno para que el botón no sea tan grande */
     text-decoration: none;
